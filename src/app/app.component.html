@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+        <ion-chip>
+          <ion-avatar routerLink="/loginuser">
+            <img src="/assets/paulocantante.jpg">
+          </ion-avatar>
+          <ion-label><b>@PauloLondra</b></ion-label>
+        </ion-chip>
+      </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/inicio"><ion-icon slot="start" name="bonfire-outline"></ion-icon>Menú Principal</ion-item>
+        <ion-item routerLink="/recetas"><ion-icon slot="start" name="earth-outline"></ion-icon>Categorías Recetas</ion-item>
+        <ion-item routerLink="/creacion-recetas"><ion-icon slot="start" name="extension-puzzle-outline"></ion-icon>Crea tus Recetas</ion-item>
+        
+      </ion-list>
+
+      
+      
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

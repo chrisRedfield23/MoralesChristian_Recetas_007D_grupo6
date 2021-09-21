@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar background color="black">
+    <ion-title color="light">Registrate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content background color="warning">
+  <br>
+  <br>
+<div id="header">
+    
+  <img src="/assets/iconoregistro.png" />
+  
+</div>
+  
+  <form  #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <!--
+    <ion-list-header>
+
+      <ion-label>Formulario Válido: {{formulario.valid}} </ion-label>
+
+    </ion-list-header>-->
+    <ion-item background color="black">
+      <ion-label position="floating" name="nombre" [(ngModel)]= "usuario.nombre" required><b>Nuevo usuario</b></ion-label>
+      <ion-input ></ion-input>
+    </ion-item>
+    <ion-item background color="black">
+      <ion-label position="floating" name="edad" [(ngModel)]= "usuario.edad" required><b>Edad</b></ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item background color="black">
+      <ion-label position="floating" type="email"  name="email" [(ngModel)]= "usuario.email"
+      pattern="^([a-zA-Z0-9-.]+)@([a-zA-Z0-9-.]+).([a-zA-Z]{2,5})$"required><b>Correo electronico</b></ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item background color="black">
+      <ion-label position="floating" ><b>Contraseña</b></ion-label>
+      <ion-input type="password"  background color="success" name="password" [(ngModel)]= "usuario.password" required></ion-input>
+    </ion-item>
+    
+    <ion-button [disabled] ="formulario.invalid" type="submit" expand="block" shape="round" background color="danger" routerLink="/loginuser"><ion-icon slot="start" name="body-outline"></ion-icon>Registrate</ion-button>
+    <ion-button expand="block" shape="round" background color="danger" routerLink="/inicio"><ion-icon slot="start" name="arrow-undo-circle-outline"></ion-icon>Volver</ion-button>
+
+    <br>
+  </form>
+</ion-content>

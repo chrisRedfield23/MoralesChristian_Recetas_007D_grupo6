@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar background color="black">
+    <ion-buttons slot="end" >
+      <ion-button class=" title" background color="light" routerLink="/ingresodatos" >¿No te registras?</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content background color="warning">
+  <br>
+  <ion-title class="title"><b>Inicio Sesión</b></ion-title>
+  <br>
+
+  <div id="header">
+    
+    <img src="/assets/iconoregistro.png" />
+    
+  </div>
+  
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <!--
+    <ion-list-header>
+
+      <ion-label>Formulario Válido: {{formulario.valid}} </ion-label>
+
+    </ion-list-header>-->
+
+    <ion-item background color="warning">
+      <ion-label position="floating">Correo</ion-label>
+    <ion-input  type="email"  name="email" [(ngModel)]= "usuario.email"
+     pattern="^([a-zA-Z0-9-.]+)@([a-zA-Z0-9-.]+).([a-zA-Z]{2,5})$"required></ion-input>
+
+    </ion-item>
+    <ion-item background color="warning">
+      <ion-label position="floating" >contraseña</ion-label>
+    <ion-input type="password"  background color="success" name="password" [(ngModel)]= "usuario.password" required></ion-input>
+    </ion-item>
+
+    <ion-button [disabled] ="formulario.invalid"
+
+              type="submit" expand="block" routerLink="/inicio">
+
+        Iniciar
+
+      </ion-button>
+    </form>
+</ion-content>
+
